@@ -1,4 +1,4 @@
-class Persona:
+class Persona: #Definimos nuestras clases con sus atributos
     def __init__(self, nombre, edad):
         self.nombre = nombre
         self.edad = edad
@@ -7,7 +7,7 @@ class Persona:
         print(f"Nombre: {self.nombre}, Edad: {self.edad}")
 
 
-class Pasajero(Persona):
+class Pasajero(Persona): #Clase que hereda atributos de persona
     def __init__(self, nombre, edad, pasaporte):
         super().__init__(nombre, edad)
         self.pasaporte = pasaporte
@@ -17,7 +17,7 @@ class Pasajero(Persona):
         print(f"Pasaporte: {self.pasaporte}")
 
 
-class Empleado(Persona):
+class Empleado(Persona): #Clase que tambien hereda los atributos de una persona 
     def __init__(self, nombre, edad, id_empleado):
         super().__init__(nombre, edad)
         self.id_empleado = id_empleado
@@ -98,7 +98,7 @@ class Itinerario:
         self.vuelo.mostrar_info()
 
 
-# Creación de objetos
+# Creación de objetos de las clases anterioroes
 pasajero1 = Pasajero("Juan", 30, "A123456")
 pasajero2 = Pasajero("Maria", 25, "B654321")
 empleado1 = Empleado("Carlos", 40, "E001")
@@ -113,7 +113,7 @@ terminal2 = Terminal(2, aeropuerto)
 itinerario1 = Itinerario(pasajero1, vuelo1)
 itinerario2 = Itinerario(pasajero2, vuelo2)
 
-# Agregar relaciones
+# Aqui es donde se agregan las relaciones 
 vuelo1.agregar_pasajero(pasajero1)
 vuelo1.agregar_empleado(empleado1)
 vuelo2.agregar_pasajero(pasajero2)
@@ -123,11 +123,11 @@ avion2.agregar_vuelo(vuelo2)
 aeropuerto.agregar_avion(avion1)
 aeropuerto.agregar_avion(avion2)
 
-
+#Se crea una funcion para limpiar la terminal cada que el usuario teclee una opcion
 def clear_screen():
     print("\033c", end="")
 
-# Menú interactivo
+# Se crea una funcion para desplegar un menu interactivo con un ciclo "While"
 def mostrar_menu():
     print("\nMenu:")
     print("1. Mostrar información del aeropuerto")
@@ -138,7 +138,7 @@ def mostrar_menu():
     print("6. Mostrar itinerario de un pasajero")
     print("7. Salir")
 
-while True:
+while True:#Ciclo para que el usuario este interactuando con el menu hasta que este desee salir 
     mostrar_menu()
     opcion = input("Seleccione una opción: ")
     if opcion == "1":
